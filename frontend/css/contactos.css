@@ -1,0 +1,157 @@
+/* contactos.css */
+
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #F2F2F2; /* Fondo en gris claro */
+    color: #333; /* Color de texto oscuro para buen contraste */
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #003366; /* Azul oscuro */
+    padding: 1rem;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #F2F2F2; /* Texto en gris claro para contraste */
+}
+h1 {
+    color: #ffffff;
+}
+
+h2 {
+    color: #333; /* Azul oscuro para títulos */
+    text-align: center;
+}
+
+main {
+    padding: 2rem;
+}
+#contact-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+    background-color: #ffffff; /* Beige Suave */
+    padding: 2rem;
+    border-radius: 8px;
+}
+
+/* Estilos para el mapa */
+.map-container {
+    flex: 1;
+    margin-right: 2rem;
+    border: 2px solid #000000; /* Borde azul pastel */
+    border-radius: 8px;
+}
+
+/* Detalles de contacto */
+.contact-details {
+    flex: 1;
+    background-color: #FFF; /* Fondo blanco */
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+}
+
+.contact-details p {
+    margin: 0.5rem 0;
+}
+
+
+
+form {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+}
+
+label {
+    margin-left: 25px;
+    margin-bottom: 0.5rem;
+    color: #003366; /* Azul oscuro para etiquetas */
+    font-weight: bold;
+    
+}
+
+input, textarea {
+    width: 650px;
+    height: 15px;
+    margin-bottom: 1rem;
+    margin: 0 auto;
+    text-align: center;
+    padding: 10px;
+    border: 1px solid #CCC;
+    border-radius: 4px;
+    background-color: #E0F7FA; /* Azul Pastel */
+    color: #333;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+button {
+    width: 70px;
+    height: 35px;
+    margin: 0 auto;
+    padding: 0.7rem;
+    background-color: #003366; /* Azul oscuro */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #00509E; /* Azul más brillante en hover */
+}
+
+/* Footer */
+.footer-container {
+    background-color: #003366; /* Azul oscuro */
+    color: #F2F2F2; /* Texto en gris claro */
+    padding: 2rem 0;
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+}
+
+.footer-column h4 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+.footer-column p, .footer-column a {
+    color: #F2F2F2;
+    text-decoration: none;
+    margin: 0.5rem 0;
+}
+
+.footer-column a:hover {
+    color: #E0F7FA; /* Azul pastel para hover */
+}
+
+.social-icons i {
+    font-size: 1.5rem;
+    margin-right: 1rem;
+}
+
+.social-icons a {
+    color: #F2F2F2;
+    transition: color 0.3s;
+}
+
+.social-icons a:hover {
+    color: #E0F7FA; /* Efecto hover para los iconos */
+}
+
+/* Media Queries para hacer el diseño responsivo */
+@media (max-width: 768px) {
+    #contact-info {
+        flex-direction: column;
+    }
+
+    .map-container, .contact-details {
+        margin-bottom: 2rem;
+    }
+}
