@@ -1,0 +1,486 @@
+/* contactos.css */
+
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #F2F2F2; /* Fondo en gris claro */
+    color: #333; /* Color de texto oscuro para buen contraste */
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #003366; /* Azul oscuro */
+    padding: 1rem;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #F2F2F2; /* Texto en gris claro para contraste */
+}
+h1 {
+    color: #ffffff;
+}
+
+h2 {
+    color: #333; /* Azul oscuro para títulos */
+    text-align: center;
+}
+
+main {
+    padding: 2rem;
+}
+#contact-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+    background-color: #ffffff; /* Beige Suave */
+    padding: 2rem;
+    border-radius: 8px;
+}
+
+/* Estilos para el mapa */
+.map-container {
+    flex: 1;
+    margin-right: 2rem;
+    border: 2px solid #000000; /* Borde azul pastel */
+    border-radius: 8px;
+}
+
+/* Detalles de contacto */
+.contact-details {
+    flex: 1;
+    background-color: #FFF; /* Fondo blanco */
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+}
+
+.contact-details p {
+    margin: 0.5rem 0;
+}
+
+
+
+form {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+}
+
+label {
+    margin-left: 25px;
+    margin-bottom: 0.5rem;
+    color: #003366; /* Azul oscuro para etiquetas */
+    font-weight: bold;
+    
+}
+
+input, textarea {
+    width: 650px;
+    height: 15px;
+    margin-bottom: 1rem;
+    margin: 0 auto;
+    text-align: center;
+    padding: 10px;
+    border: 1px solid #CCC;
+    border-radius: 4px;
+    background-color: #E0F7FA; /* Azul Pastel */
+    color: #333;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+button {
+    width: 70px;
+    height: 35px;
+    margin: 0 auto;
+    padding: 0.7rem;
+    background-color: #003366; /* Azul oscuro */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #00509E; /* Azul más brillante en hover */
+}
+
+/* Estilos para la imagen encima de la barra de navegación */
+.top-image {
+  text-align: center;
+  margin-bottom: px; /* Espacio entre la imagen y la barra de navegación */
+}
+
+.top-image img {
+  width: 100%; /* Asegura que la imagen ocupe todo el ancho del contenedor */
+  max-width: 1200px; /* Ancho máximo para la imagen */
+  height: auto; /* Mantiene la proporción de la imagen */
+}
+
+/* Estilos para el logo en la barra de navegación */
+.logo {
+  color: white;
+  text-decoration: none;
+  font-size: 32px; /* Aumenta el tamaño del texto del logo */
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+}
+
+/* Logo como imagen redonda */
+.logo img {
+  height: 60px; /* Aumenta la altura del logo */
+  width: 60px;  /* Asegura que el ancho sea igual a la altura */
+  border-radius: 50%; /* Hace que la imagen sea redonda */
+  margin-right: 15px; /* Espacio entre la imagen y el texto */
+  vertical-align: middle;
+}
+
+/* Barra de navegación */
+.navbar {
+  background-color: #d30f6b;
+  color: white;
+  padding: 15px 20px; /* Ajusta el padding para mayor espacio */
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  border-radius: 10px; /* Redondea las esquinas de la barra de navegación */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Agrega una sombra para mejorar la visibilidad */
+}
+
+/* Contenedor de la barra de navegación */
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* Estilos para los enlaces de navegación */
+.nav-links {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li {
+  margin: 0 20px; /* Aumenta el espacio entre los elementos del menú */
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-size: 20px; /* Aumenta el tamaño del texto en los enlaces */
+}
+
+.nav-links a:hover {
+  text-decoration: underline;
+}
+
+  
+  /* Estilos para menú hamburguesa */
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+  }
+  
+  .hamburger .line {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 5px 0;
+  }
+  
+  /* Responsive Design */
+  @media screen and (max-width: 768px) {
+    .nav-links {
+      position: absolute;
+      top: 100%;
+      right: 0;
+      background-color: #4caf65;
+      width: 100%;
+      height: 100vh;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      transform: translateX(100%);
+      transition: transform 0.3s ease-in-out;
+    }
+  
+    .nav-links.active {
+      transform: translateX(0);
+    }
+  
+    .nav-links li {
+      margin: 20px 0;
+    }
+  
+    .hamburger {
+      display: flex;
+    }
+  }
+
+/* Contenedor del carrusel centrado */
+.carousel-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 15px auto; /* Separación del carrusel respecto a la barra de navegación */
+  width:70%; /* Puedes ajustar el ancho del recuadro */
+  max-width: 2000px; /* Ancho máximo del recuadro */
+  background-color: #f0e7e7; /* Fondo para el recuadro del carrusel */
+  padding: 10px; /* Espaciado interno alrededor del carrusel */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Sombra para destacar el recuadro */
+  border-radius: 10px; /* Bordes redondeados */
+}
+
+/* Estilos generales del carrusel */
+.carousel {
+  position: relative;
+  width: 100%; /* El carrusel tomará el 100% del espacio disponible dentro del contenedor */
+  overflow: hidden;
+}
+
+.carousel-container {
+  display: flex;
+  transition: transform 0.7s ease-in-out;
+}
+
+.slide {
+  min-width: 100%;
+  position: relative;
+  display: flex; /* Asegura que el contenido del slide se alinee horizontalmente */
+}
+
+.slide-content {
+  display: flex;
+  width: 100%;
+}
+
+.slide img {
+  width: 70%; /* Ajusta el ancho de la imagen al 50% del contenedor */
+  height: auto;/* Mantiene la proporción de la imagen */
+}
+
+.caption {
+  width: 20%; /* Ajusta el ancho del texto al 50% del contenedor */
+  padding: 15px;
+  box-sizing: border-box;
+}
+
+.caption h2 {
+  margin-top: 0;
+  color: #333;
+}
+
+.caption p {
+  color: #666;
+}
+
+/* Botones de navegación */
+button.prev, button.next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+}
+
+button.prev {
+  left: 10px;
+}
+
+button.next {
+  right: 10px;
+}
+
+button:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Indicadores (puntos) */
+.indicators {
+  text-align: center;
+  position: absolute;
+  bottom: 10px;
+  width: 100%;
+}
+
+.indicators .dot {
+  height: 15px;
+  width: 15px;
+  margin: 0 5px;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  display: inline-block;
+  cursor: pointer;
+  transition: background-color 0.6s ease;
+}
+
+.indicators .dot.active {
+  background-color: white;
+}
+
+.indicators .dot:hover {
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+/* Estilos para el chatbot */
+.chatbot {
+  position: fixed;
+  bottom: 0;
+  right: 20px;
+  width: 300px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  height: 400px;
+  z-index: 1000;
+  display: none; /* Inicialmente oculto */
+}
+
+/* Estilos para el burbuja del chatbot */
+.chatbot-bubble {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #333;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  cursor: pointer;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+}
+
+/* Estilos para el encabezado del chatbot */
+.chatbot-header {
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.chatbot-messages {
+  flex: 1;
+  padding: 10px;
+  overflow-y: auto;
+  border-bottom: 1px solid #ddd;
+}
+
+.chatbot-input {
+  display: flex;
+}
+
+.chatbot-input input {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  border-bottom-left-radius: 10px;
+}
+
+.chatbot-input button {
+  padding: 10px;
+  border: none;
+  background-color: #333;
+  color: #fff;
+  border-bottom-right-radius: 10px;
+  cursor: pointer;
+}
+
+.chatbot-input button:hover {
+  background-color: #555;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.close-btn:hover {
+  color: #aaa;
+}
+
+  
+/* Footer */
+.footer-container {
+    background-color: #003366; /* Azul oscuro */
+    color: #F2F2F2; /* Texto en gris claro */
+    padding: 2rem 0;
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+}
+
+.footer-column h4 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+.footer-column p, .footer-column a {
+    color: #F2F2F2;
+    text-decoration: none;
+    margin: 0.5rem 0;
+}
+
+.footer-column a:hover {
+    color: #E0F7FA; /* Azul pastel para hover */
+}
+
+.social-icons i {
+    font-size: 1.5rem;
+    margin-right: 1rem;
+}
+
+.social-icons a {
+    color: #F2F2F2;
+    transition: color 0.3s;
+}
+
+.social-icons a:hover {
+    color: #E0F7FA; /* Efecto hover para los iconos */
+}
+
+/* Media Queries para hacer el diseño responsivo */
+@media (max-width: 768px) {
+    #contact-info {
+        flex-direction: column;
+    }
+
+    .map-container, .contact-details {
+        margin-bottom: 2rem;
+    }
+}
+
+footer .social-media a {
+  margin: 0 10px;
+}
+
+footer .social-media img {
+  width: 30px;
+  height: 30px;
+}
