@@ -1,118 +1,109 @@
-/* sobre-nosotros.css */
-
-
-
-/* Estilos para la sección "Nuestro Equipo" */
-.team-member {
+/* Estilos para la sección "Ressurgir somos nosotros" */
+.history-container {
     display: flex;
     align-items: center;
+    justify-content: space-between;
+    margin-bottom: 40px;
+}
+
+.history-text {
+    flex: 1;
+    padding-right: 20px;
+}
+
+.history-text h1 {
+    font-size: 3em; /* Tamaño grande del título */
+    color: #333;
     margin-bottom: 20px;
 }
 
-.team-member img {
-    width: 150px; /* Tamaño aumentado de la imagen */
-    height: 150px; /* Tamaño aumentado de la imagen */
-    object-fit: cover; /* Asegura que la imagen cubra el área sin distorsionarse */
-    margin-right: 20px; /* Espacio adicional entre la imagen y la información */
-    border-radius: 50%; /* Hace que la imagen sea redonda */
+.history-text p {
+    font-size: 1.2em; /* Tamaño adecuado para el párrafo */
+    color: #555;
 }
 
-.team-info {
+.history-image {
     flex: 1;
-}
-
-/* Estilos para la galería */
-.gallery {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 15px;
-    justify-content: center;
-}
-
-.gallery img {
-    width: 100%;
-    max-width: 300px; /* Ajusta el tamaño máximo de las imágenes */
-    height: auto;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-    transition: transform 0.3s ease;
-}
-
-.gallery img:hover {
-    transform: scale(1.05); /* Efecto de zoom al pasar el ratón */
-}
-
-/* Estilos para las secciones ocultables */
-#mission-section, #values-section {
-    display: none;
-}
-
-/* Animaciones */
-.animate {
-    animation: fadeIn 1s ease-in-out;
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-
-/* Oculta el contenido de las secciones por defecto */
-.section-content {
-    display: none;
-    opacity: 0;
-    transition: opacity 0.3s ease-in-out; /* Transición suave al mostrar el contenido */
-}
-
-/* Muestra el contenido al pasar el mouse sobre la sección */
-.section:hover .section-content {
-    display: block;
-    opacity: 1;
-}
-
-/* Estilo opcional para los encabezados de las secciones */
-.section h2 {
-    cursor: pointer; /* Cambia el cursor para indicar que es interactivo */
-}
-
-/* Estilos para el encabezado y pie de página */
-header, footer {
-    background-color: #333;
-    color: #fff;
-    padding: 20px;
     text-align: center;
 }
 
+.history-image img {
+    width: 100%; /* Ocupa todo el ancho disponible del contenedor */
+    max-width: 500px; /* Establece un tamaño máximo para la imagen */
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Sombra sutil alrededor de la imagen */
+}
+
+@media screen and (max-width: 768px) {
+    .history-container {
+        flex-direction: column; /* Apila el texto y la imagen uno debajo del otro en pantallas pequeñas */
+        text-align: center;
+    }
+
+    .history-text {
+        padding-right: 0;
+        padding-bottom: 20px; /* Espacio adicional debajo del texto */
+    }
+
+    .history-image img {
+        max-width: 100%; /* Asegura que la imagen ocupe el ancho completo en pantallas pequeñas */
+    }
+}
+/* Estilos del menú desplegable */
+.nav-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
 .nav-links li {
-    display: inline;
-    margin: 0 10px;
+    position: relative;
+    margin-right: 20px;
 }
 
 .nav-links a {
-    color: #fff;
     text-decoration: none;
+    color: #333;
+    padding: 10px 15px;
+    display: block;
 }
 
-.footer-container {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
+.nav-links a:hover {
+    background-color: #f0f0f0;
 }
 
-.footer-column {
-    flex: 1;
-    padding: 10px;
+/* Estilo para el dropdown */
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    top: 100%;
+    left: 0;
+    min-width: 200px;
 }
 
-.social-icons a {
-    color: #fff;
-    margin: 0 5px;
-    text-decoration: none;
+.dropdown-menu li {
+    margin: 0;
 }
+
+.dropdown-menu a {
+    padding: 10px 20px;
+    color: #333;
+    white-space: nowrap;
+}
+
+.dropdown-menu a:hover {
+    background-color: #f0f0f0;
+}
+
+/* Mostrar el menú desplegable al pasar el mouse */
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
