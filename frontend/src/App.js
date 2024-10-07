@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Home from './pages/Home';
 import Emprendimientos from './pages/Emprendimientos';
 import Testimonios from './pages/Testimonios';
+import Contactanos from './pages/Contactanos';
 import Navbar from './components/Navbar'; // Asegúrate de que la ruta sea correcta
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/emprendimientos" element={<Emprendimientos />} />
           <Route path="/testimonios" element={<Testimonios />} />
+          <Route path="/contactanos" element={<Contactanos />} />
           {/* Otras rutas */}
         </Routes>
       </div>

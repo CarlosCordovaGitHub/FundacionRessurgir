@@ -35,7 +35,7 @@ const Navbar = () => {
             <Link to="/" className="hover:text-gray-900">QUÉ HACEMOS</Link>
             <Link to="./Testimonios" className="hover:text-gray-900">Testimonios</Link>
             <Link to="/" className="hover:text-gray-900">EQUIPO</Link>
-            <Link to="/" className="hover:text-gray-900">CONTÁCTANOS</Link>
+            <Link to="/Contactanos" className="hover:text-gray-900">CONTÁCTANOS</Link>
           </div>
         </div>
   
@@ -46,7 +46,7 @@ const Navbar = () => {
             <Link to="/" className="block text-gray-600 font-semibold hover:text-gray-900 py-2">QUÉ HACEMOS</Link>
             <Link to="./Testimonios" className="block text-gray-600 font-semibold hover:text-gray-900 py-2">Testimonios</Link>
             <Link to="/" className="block text-gray-600 font-semibold hover:text-gray-900 py-2">EQUIPO</Link>
-            <Link to="/" className="block text-gray-600 font-semibold hover:text-gray-900 py-2">CONTÁCTANOS</Link>
+            <Link to="/Contactanos" className="block text-gray-600 font-semibold hover:text-gray-900 py-2">CONTÁCTANOS</Link>
           </div>
         )}
       </nav>
