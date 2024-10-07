@@ -42,8 +42,8 @@ const Contactanos = () => {
         {/* Información de Contacto */}
         <div className="mb-12 text-center">
           <h2 className="text-2xl font-semibold mb-4 text-gray-700">Información de Contacto</h2>
-          <p className="text-lg text-gray-600">Teléfono: (123) 456-7890</p>
-          <p className="text-lg text-gray-600">Dirección: Calle Ficticia 123, Ciudad, País</p>
+          <p className="text-lg text-gray-600">Teléfono: 0939649440</p>
+          <p className="text-lg text-gray-600">Dirección: 1705011, Quito 170501</p>
           <p className="text-lg text-gray-600">Correo Electrónico: contacto@fundacion.com</p>
           <h3 className="text-xl font-semibold mt-8">Síguenos en nuestras redes sociales</h3>
           <div className="flex justify-center space-x-4 mt-4">
