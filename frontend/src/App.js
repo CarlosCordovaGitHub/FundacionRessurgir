@@ -5,6 +5,8 @@ import Emprendimientos from './pages/Emprendimientos';
 import Testimonios from './pages/Testimonios';
 import Contactanos from './pages/Contactanos';
 import Navbar from './components/Navbar'; // Asegúrate de que la ruta sea correcta
+import Footer from './components/Footer'; // Importa el Footer
+
 
 function App() {
   return (
@@ -21,6 +23,7 @@ function App() {
           <Route path="/contactanos" element={<Contactanos />} />
           {/* Otras rutas */}
         </Routes>
+        <Footer />
       </div>
     </Router>
   );
