@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import React, { useState } from 'react'
 import { Dialog, DialogPanel } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 
@@ -134,37 +134,6 @@ export default function Home() {
           />
         </div>
       </div>
-
-      {/* Aquí empieza el código del footer */}
-      <footer className="bg-gray-500 text-white">
-        <div className="container mx-auto px-6 py-12">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="space-y-4">
-              <h3 className="text-lg font-bold">FUNDACIÓN RESSURGIR</h3>
-              <p>Trabajamos para apoyar a quienes más lo necesitan y ayudarles a superar las dificultades.</p>
-            </div>
-            <div className="space-y-4">
-              <h3 className="text-lg font-bold">Enlaces útiles</h3>
-              <ul className="space-y-2">
-                <li><a href="#" className="hover:underline">Inicio</a></li>
-                <li><a href="#" className="hover:underline">Quienes somos</a></li>
-                <li><a href="#" className="hover:underline">Donaciones</a></li>
-              </ul>
-            </div>
-            <div className="space-y-4">
-              <h3 className="text-lg font-bold">Contacto</h3>
-              <ul className="space-y-2">
-                <li>Teléfono: (555) 123-4567</li>
-                <li>Email: contacto@fundacionressurgir.org</li>
-                <li>Dirección: Calle 123, Ciudad, País</li>
-              </ul>
-            </div>
-          </div>
-          <div className="mt-8 text-center">
-            <p className="text-sm">&copy; 2024 Fundación Ressurgir. Todos los derechos reservados.</p>
-          </div>
-        </div>
-      </footer>
     </div>
   )
 }
