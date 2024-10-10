@@ -14,7 +14,7 @@ const emprendimientos = [
         name: 'Retrato',
         description: 'Retrato de persona con angustia por la pérdida de su hijo',
         price: '$12.00',
-        imageSrc: './images_empre/pintura2.jpg', // Reemplaza con la imagen del producto
+        imageSrc: './images_empre/pintura2.jpg',
         imageAlt: 'Imagen de Retrato',
       },
       {
@@ -22,7 +22,7 @@ const emprendimientos = [
         name: 'Velas Aromáticas',
         description: 'Velas aromáticas hechas a mano con cera 100% natural.',
         price: '$8.00',
-        imageSrc: './images_empre/pintura.jpg', // Reemplaza con la imagen del producto
+        imageSrc: './images_empre/pintura.jpg',
         imageAlt: 'Imagen de Velas Aromáticas',
       },
     ],
@@ -39,8 +39,16 @@ const emprendimientos = [
         name: 'Cartera de Cuero',
         description: 'Cartera de cuero genuino, hecha a mano con los mejores materiales.',
         price: '$25.00',
-        imageSrc: './images_empre/pintura.jpg', // Reemplaza con la imagen del producto
+        imageSrc: './images_empre/pintura.jpg',
         imageAlt: 'Imagen de Cartera de Cuero',
+      },
+      {
+        id: 2,
+        name: 'Velas Aromáticas',
+        description: 'Velas aromáticas hechas a mano con cera 100% natural.',
+        price: '$8.00',
+        imageSrc: './images_empre/pintura.jpg',
+        imageAlt: 'Imagen de Velas Aromáticas',
       },
     ],
   },
@@ -51,36 +59,45 @@ export default function Emprendimientos() {
 
   return (
     <div className="bg-white py-16 px-6 lg:px-8">
-      <h1 className="text-center text-4xl font-bold text-gray-900 mb-12">Emprendimientos</h1>
-      <div className="max-w-7xl mx-auto grid grid-cols-1 gap-16 lg:grid-cols-2">
-        {emprendimientos.map((emprendimiento) => (
-          <div key={emprendimiento.name} className="bg-white shadow-lg rounded-lg p-8">
-            <div className="text-center">
+      <h1 className="text-center text-4xl font-bold tracking-tight text-[#f08080] sm:text-6xl"style={{ fontFamily: 'Dancing Script, sans-serif' }}>Emprendimientos</h1>
+      <div className="max-w-7xl mx-auto grid grid-cols-1 gap-16">
+        {emprendimientos.map((emprendimiento, index) => (
+          <div 
+            key={emprendimiento.name} 
+            className={`bg-white shadow-lg rounded-lg p-8 flex flex-col lg:flex ${index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'}`}
+          >
+            {/* Contenedor para la imagen de perfil */}
+            <div className="lg:w-1/3 flex-shrink-0 flex justify-center lg:justify-start">
               <img
                 alt={emprendimiento.name}
                 src={emprendimiento.imageUrl}
-                className="h-24 w-24 rounded-full mx-auto mb-4"
+                className="h-96 w-96 rounded-full mx-auto mb-4 lg:mx-0 lg:mb-0 lg:mr-4"
               />
+            </div>
+            
+            {/* Contenedor para la información */}
+            <div className="lg:w-2/3 text-center lg:text-left">
               <h2 className="text-xl font-bold text-gray-900">{emprendimiento.name}</h2>
               <p className="text-gray-600 mb-2">{emprendimiento.role}</p>
               <p className="text-gray-700">{emprendimiento.review}</p>
-            </div>
 
-            <div className="mt-6">
-              <h3 className="text-lg font-medium text-gray-900 mb-4">Productos:</h3>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              {/* Productos */}
+              <h3 className="text-lg font-medium text-gray-900 mt-4">Productos:</h3>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-4">
                 {emprendimiento.products.map((product) => (
                   <div
                     key={product.id}
                     className="bg-gray-100 p-4 rounded-lg shadow cursor-pointer"
                     onClick={() => setSelectedProduct(product)}
                   >
-                    <img
-                      src={product.imageSrc}
-                      alt={product.imageAlt}
-                      className="h-32 w-full object-cover rounded-md mb-4"
-                    />
-                    <h4 className="text-lg font-semibold text-gray-900">{product.name}</h4>
+                    <div className="aspect-w-1 aspect-h-1 w-full overflow-hidden rounded-md bg-gray-200 group-hover:opacity-75">
+                      <img
+                        src={product.imageSrc}
+                        alt={product.imageAlt}
+                        className="h-full w-full object-cover object-center"
+                      />
+                    </div>
+                    <h4 className="text-lg font-semibold text-gray-900 mt-4">{product.name}</h4>
                     <p className="text-gray-600">{product.description}</p>
                     <p className="mt-2 text-sm font-medium text-gray-900">{product.price}</p>
                   </div>
