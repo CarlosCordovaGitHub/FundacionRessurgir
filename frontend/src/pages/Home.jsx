@@ -9,7 +9,7 @@ const navigation = [
   { name: 'Donaciones', href: '#' },
   { name: 'Emprendimientos de los pacientes', href: '/emprendimientos' },
   { name: 'Voluntariado', href: '#' },
-  { name: 'Test de adicciones', href: '#' },
+  { name: 'Test de adicciones', href: './PsychologicalTest' },
 ]
 
 export default function Home() {
