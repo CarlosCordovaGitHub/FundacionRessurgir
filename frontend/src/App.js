@@ -6,6 +6,7 @@ import Testimonios from './pages/Testimonios';
 import Contactanos from './pages/Contactanos';
 import Navbar from './components/Navbar'; // Asegúrate de que la ruta sea correcta
 import Footer from './components/Footer'; // Importa el Footer
+import PsychologicalTest from './pages/PsychologicalTest';
 
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
         {/* Las rutas de tu aplicación */}
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/psychologicaltest" element={<PsychologicalTest />} />
           <Route path="/emprendimientos" element={<Emprendimientos />} />
           <Route path="/testimonios" element={<Testimonios />} />
           <Route path="/contactanos" element={<Contactanos />} />

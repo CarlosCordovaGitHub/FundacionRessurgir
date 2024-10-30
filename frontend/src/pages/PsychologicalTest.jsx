@@ -1,50 +1,46 @@
 import React, { useState } from 'react';
-import { Card, CardHeader, CardContent } from './ui/card';
-import { Button } from './ui/button';
-import { Progress } from './ui/progress';
+import { Card, CardHeader, CardContent } from '../components/ui/card';
+import { Button } from '../components/ui/button';
+import { Progress } from '../components/ui/progress';
 
-const PsychologicalTest = () => {
+const AlcoholAddictionTest = () => {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [answers, setAnswers] = useState([]);
   const [showResults, setShowResults] = useState(false);
 
   const questions = [
     {
-      text: "¿Con qué frecuencia te sientes ansioso/a en situaciones sociales?",
+      text: "¿Con qué frecuencia consumes alcohol?",
       options: [
-        "Nunca",
-        "Raramente",
-        "Ocasionalmente",
-        "Frecuentemente",
-        "Siempre"
+        { text: "Nunca", score: 0 },
+        { text: "Mensualmente", score: 1 },
+        { text: "Semanalmente", score: 2 },
+        { text: "A diario", score: 3 }
       ]
     },
     {
-      text: "¿Cómo manejas situaciones de estrés?",
+      text: "¿Has intentado reducir el consumo de alcohol sin éxito?",
       options: [
-        "Me bloqueo completamente",
-        "Me cuesta pero lo intento",
-        "Lo manejo adecuadamente",
-        "Lo manejo bien",
-        "Lo manejo excelentemente"
+        { text: "Nunca", score: 0 },
+        { text: "Pocas veces", score: 1 },
+        { text: "Varias veces", score: 2 },
+        { text: "Constantemente", score: 3 }
       ]
     },
     {
-      text: "¿Te resulta fácil tomar decisiones?",
+      text: "¿Te resulta difícil pasar el día sin consumir alcohol?",
       options: [
-        "Muy difícil",
-        "Difícil",
-        "Neutral",
-        "Fácil",
-        "Muy fácil"
+        { text: "Nada difícil", score: 0 },
+        { text: "Un poco difícil", score: 1 },
+        { text: "Bastante difícil", score: 2 },
+        { text: "Muy difícil", score: 3 }
       ]
     }
   ];
 
-  const handleAnswer = (optionIndex) => {
-    const newAnswers = [...answers, optionIndex];
-    setAnswers(newAnswers);
-    
+  const handleAnswer = (score) => {
+    setAnswers([...answers, score]);
+
     if (currentQuestion < questions.length - 1) {
       setCurrentQuestion(currentQuestion + 1);
     } else {
@@ -53,15 +49,14 @@ const PsychologicalTest = () => {
   };
 
   const calculateResults = () => {
-    const total = answers.reduce((sum, answer) => sum + answer, 0);
-    const average = total / answers.length;
-    
-    if (average < 1.5) return "Nivel de adaptación bajo";
-    if (average < 3) return "Nivel de adaptación medio";
-    return "Nivel de adaptación alto";
+    const totalScore = answers.reduce((sum, score) => sum + score, 0);
+
+    if (totalScore <= 2) return "No parece haber indicios de adicción al alcohol.";
+    if (totalScore <= 5) return "Hay algunos indicios de consumo problemático de alcohol.";
+    return "Se observan signos claros de adicción al alcohol. Considere buscar ayuda profesional.";
   };
 
-  const restart = () => {
+  const restartTest = () => {
     setCurrentQuestion(0);
     setAnswers([]);
     setShowResults(false);
@@ -70,10 +65,10 @@ const PsychologicalTest = () => {
   const progress = ((currentQuestion + 1) / questions.length) * 100;
 
   return (
-    <div className="w-full max-w-2xl mx-auto p-4">
+    <div className="w-full max-w-2xl mx-auto p-4 mt-16">
       <Card>
         <CardHeader className="text-2xl font-sans font-bold text-center text-primary">
-          Test Psicológico
+          Test de Adicción al Alcohol
         </CardHeader>
         <CardContent>
           {!showResults ? (
@@ -88,9 +83,9 @@ const PsychologicalTest = () => {
                     key={index}
                     variant="outline"
                     className="w-full text-left justify-start h-auto py-3 hover:bg-primary hover:text-white transition-colors"
-                    onClick={() => handleAnswer(index)}
+                    onClick={() => handleAnswer(option.score)}
                   >
-                    {option}
+                    {option.text}
                   </Button>
                 ))}
               </div>
@@ -105,7 +100,7 @@ const PsychologicalTest = () => {
               </div>
               <Button 
                 className="w-full bg-secondary hover:bg-secondary/80"
-                onClick={restart}
+                onClick={restartTest}
               >
                 Realizar el test nuevamente
               </Button>
@@ -117,4 +112,4 @@ const PsychologicalTest = () => {
   );
 };
 
-export default PsychologicalTest;
+export default AlcoholAddictionTest;
