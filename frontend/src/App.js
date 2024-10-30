@@ -8,14 +8,12 @@ import Navbar from './components/Navbar'; // Asegúrate de que la ruta sea corre
 import Footer from './components/Footer'; // Importa el Footer
 import PsychologicalTest from './pages/PsychologicalTest';
 
-
 function App() {
   return (
     <Router>
       <div>
         {/* Coloca el Navbar aquí para que se vea en todas las páginas */}
         <Navbar />
-
         {/* Las rutas de tu aplicación */}
         <Routes>
           <Route path="/" element={<Home />} />
