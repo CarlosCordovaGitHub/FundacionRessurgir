@@ -1,7 +1,7 @@
 export const chatApi = {
     async sendQuestion(question, sessionId, page) {
       try {
-        const response = await fetch('/api/chat/question', {
+        const response = await fetch('http://localhost:5000/api/chat/question', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',

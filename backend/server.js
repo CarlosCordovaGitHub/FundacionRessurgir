@@ -1,26 +1,32 @@
-// server.js
 const express = require('express');
+const mongoose = require('mongoose');
 const cors = require('cors');
+const config = require('./config/config'); // Asegúrate de tener el archivo config.js configurado correctamente
+const connectDB = require('./config/database'); // Archivo que contiene la lógica de conexión a MongoDB
+const chatRoutes = require('./routes/chatbot'); // Ruta para tu API de chatbot
+
+// Crear la aplicación de Express
 const app = express();
-const PORT = 5000;
 
-// Middleware para permitir solicitudes JSON y CORS
+// Conectar a MongoDB Atlas
+connectDB();
+
+// Configuración de CORS para permitir peticiones desde tu frontend
+app.use(cors({
+  origin: 'http://localhost:5173', // Cambia esto según el origen de tu frontend
+  methods: ['GET', 'POST'], // Métodos HTTP permitidos
+  allowedHeaders: ['Content-Type', 'Authorization'] // Headers permitidos
+}));
+
+// Middleware para parsear JSON
 app.use(express.json());
-app.use(cors());
 
-// Endpoint para manejar las preguntas del chatbot
-app.post('/chat/question', (req, res) => {
-  const { question } = req.body; // Obtiene la pregunta desde el cuerpo de la solicitud
+// Definir rutas
+app.use('/api/chat', chatRoutes); // Usa las rutas del chatbot
 
-  console.log(`Pregunta recibida: ${question}`); // Muestra la pregunta en la consola para debug
+// Puerto de escucha
+const PORT = config.PORT || 5000;
 
-  // Respuesta de prueba
-  res.json({
-    answer: "Esta es una respuesta de prueba del servidor.",
-  });
-});
-
-// Inicia el servidor
 app.listen(PORT, () => {
-  console.log(`Servidor backend escuchando en http://localhost:${PORT}`);
+  console.log(`Servidor ejecutándose en http://localhost:${PORT}`);
 });
